@@ -1,5 +1,6 @@
 import { Roboto } from 'next/font/google';
 import { createTheme } from '@mui/material/styles';
+import Link from "@/components/Link";
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
@@ -15,13 +16,10 @@ const theme = createTheme({
     fontFamily: roboto.style.fontFamily,
   },
   components: {
-    MuiAlert: {
-      styleOverrides: {
-        root: ({ ownerState }) => ({
-          ...(ownerState.severity === 'info' && {
-            backgroundColor: '#60a5fa',
-          }),
-        }),
+    MuiButton: {
+      defaultProps: {
+        disableElevation: true,
+        LinkComponent: Link,
       },
     },
   },

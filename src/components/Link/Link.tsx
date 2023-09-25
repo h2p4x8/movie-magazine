@@ -39,6 +39,8 @@ export const NextLinkComposed = React.forwardRef<HTMLAnchorElement, NextLinkComp
   },
 );
 
+NextLinkComposed.displayName = 'NextLinkComposed';
+
 export type LinkProps = {
   display?: 'block' | 'inline-block' | 'inline',
   activeClassName?: string;
@@ -132,5 +134,7 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => {
     />
   );
 });
+
+Link.displayName = 'Link';
 
 export default Link;
